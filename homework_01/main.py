@@ -20,11 +20,19 @@ EVEN = "even"
 PRIME = "prime"
 
 def is_Prime(n):
+    if n == 1:
+        return False
+
+    if n == 2:
+        return True
+
     if (n % 2 == 0):
         return False
+
     for i in range(3, int(n**0.5 + 1), 2):
         if (n % i == 0):
             return False
+
     return True
 
 def filter_numbers(nums, fltr):
@@ -49,7 +57,7 @@ def main():
     print(power_numbers(1, 4, 7, 4, 90))
     print(filter_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], ODD))
     print(filter_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], EVEN))
-    print(filter_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], PRIME))
+    print(filter_numbers([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], PRIME))
 
 if __name__ == "__main__":
     main()
