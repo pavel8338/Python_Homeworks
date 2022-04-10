@@ -1,6 +1,5 @@
 from abc import ABC
-#from exceptions import LowFuelError, NotEnoughFuel, CargoOverload
-import exceptions as exceptions
+from homework_02 import exceptions
 
 class Vehicle(ABC):
     def __init__(self, weight = 1000, fuel = 40, fuel_consumption = 10):
@@ -23,5 +22,5 @@ class Vehicle(ABC):
             raise exceptions.NotEnoughFuel
 
 if __name__ == "__main__":
-    vehicle = Vehicle(1500, 9, 10)
-    vehicle.move(1)
+    vehicle = Vehicle(1500, 0, 10)
+    vehicle.start()
